@@ -1,0 +1,19 @@
+var play1 = 0;
+var snd1 = 0;
+var loop1 = 0;
+
+[STEP]
+
+		if(play1 < 1){
+			snd1 = audio_play_sound(msc_ambient1, 1, false);
+			play1++;
+		}
+		
+		if(play1 > 0){
+			if(!audio_is_playing(snd1) && loop1 == 0){
+				var music1 = audio_play_sound(msc_ambient1, 1, true);
+				audio_sound_set_track_position(music1, 3.50);
+				loop1++;
+			}
+		}
+		
